@@ -1,0 +1,61 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link src="stylesheet" src="css/jquery-ui.css">
+  <script src="js/jquery-2.1.4.js"></script>
+  <script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+  <style type ="text/css">
+  ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
+  li { margin: 5px; padding: 5px; width: 150px; }
+  .ui-state-default {
+	border: 1px solid #d3d3d3;
+	background: blue url("images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x;
+	font-weight: normal;
+	color: #32a9c3;
+  }
+  .container{
+  position: relative;
+  height: 300px;
+  width: 20%;
+  margin-left:auto;
+  margin-right:auto;
+  border: solid 2px;
+  background-color: #f7f7f7;
+  padding:20px;
+}
+
+  </style>
+  <script>
+  $(function() {
+    $( "#sortable" ).sortable({
+      revert: true
+    });
+    $( "#draggable" ).draggable({
+      connectToSortable: "#sortable",
+      helper: "clone",
+      revert: "invalid"
+    });
+    $( "ul, li" ).disableSelection();
+  });
+  </script>
+  <style>
+  .tk-source-code-pro{font-family:"source-code-pro",sans-serif;}.tk-klavika-web{font-family:"klavika-web",sans-serif;}
+  </style>
+</head>
+<body>
+  <div class="container">
+<ul>
+  <li id="draggable" class="ui-state-highlight">Drag and Drop</li>
+</ul>
+ 
+<ul id="sortable" class="ui-sortable">
+  <li class="ui-state-default" id="element1">element 1 </li>
+  <li class="ui-state-default" id="element2">element 2</li>
+  <li class="ui-state-default" id="element3">element 3</li>
+  <li class="ui-state-default" id="element4">element 4</li>
+  <li class="ui-state-default" id="element5">element 5</li>
+</ul>
+</div>
+</body>
+</html>
